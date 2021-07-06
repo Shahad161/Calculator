@@ -1,0 +1,35 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <!-- Base application theme. -->
+    <style name="Theme.Calculator" parent="Theme.MaterialComponents.DayNight.NoActionBar">
+        <!-- Primary brand color. -->
+        <item name="colorPrimary">@color/backGround</item>
+        <item name="colorPrimaryVariant">@color/backGround</item>
+        <item name="colorOnPrimary">@color/white</item>
+        <!-- Status bar color. -->
+        <item name="android:statusBarColor" tools:targetApi="l">?attr/colorPrimaryVariant</item>
+    </style>
+    <style name="button">
+        <item name="android:layout_height">60dp</item>
+        <item name="android:layout_width">60dp</item>
+        <item name="android:background">@drawable/button</item>
+        <item name="android:textSize">24sp</item>
+    </style>
+    <style name="smallbutton">
+        <item name="android:layout_height">32dp</item>
+        <item name="android:layout_width">50dp</item>
+        <item name="android:background">@drawable/smallbutton</item>
+        <item name="android:textSize">16sp</item>
+    </style>
+    <style name="result">
+        <item name="android:layout_height">60dp</item>
+        <item name="android:layout_width">140dp</item>
+        <item name="android:background">@drawable/smallbutton</item>
+        <item name="android:textSize">40sp</item>
+    </style>
+    <style name="red">
+        <item name="android:layout_height">55dp</item>
+        <item name="android:layout_width">55dp</item>
+        <item name="android:background">@drawable/button</item>
+        <item name="android:textSize">12sp</item>
+    </style>
+</resources>
