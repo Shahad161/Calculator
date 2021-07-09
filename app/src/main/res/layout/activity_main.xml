@@ -21,6 +21,17 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
+    <TextView
+        android:id="@+id/operation"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="right"
+        android:maxLength="10"
+        android:text=""
+        android:textColor="@color/white"
+        android:textSize="64sp"
+        app:layout_constraintBottom_toTopOf="@+id/numbers" />
+
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="0dp"
@@ -33,189 +44,12 @@
         app:layout_constraintTop_toBottomOf="@+id/numbers"
         app:layout_constraintVertical_bias="0.0">
 
-        <androidx.appcompat.widget.AppCompatButton
-            android:id="@+id/sin"
-            style="@style/smallbutton"
-            android:layout_marginTop="32dp"
-            android:onClick="onClickNumber"
-            android:text="Sin"
-            android:textColor="@color/buttonIcon1"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
-
-        <androidx.appcompat.widget.AppCompatButton
-            android:id="@+id/cos"
-            style="@style/smallbutton"
-            android:layout_marginStart="8dp"
-            android:onClick="onClickNumber"
-            android:text="cos"
-            android:textColor="@color/buttonIcon1"
-            app:layout_constraintEnd_toStartOf="@+id/tan"
-            app:layout_constraintHorizontal_bias="0.5"
-            app:layout_constraintStart_toEndOf="@+id/sin"
-            app:layout_constraintTop_toTopOf="@+id/sin" />
-
-        <androidx.appcompat.widget.AppCompatButton
-            android:id="@+id/tan"
-            style="@style/smallbutton"
-            android:layout_marginStart="16dp"
-            android:onClick="onClickNumber"
-            android:text="tan"
-            android:textColor="@color/buttonIcon1"
-            app:layout_constraintStart_toEndOf="@+id/cos"
-            app:layout_constraintTop_toTopOf="@+id/cos" />
-
-        <androidx.appcompat.widget.AppCompatButton
-            android:id="@+id/Log2"
-            style="@style/smallbutton"
-            android:layout_marginTop="8dp"
-            android:onClick="onClickNumber"
-            android:text="Log2"
-            android:textColor="@color/buttonIcon1"
-            app:layout_constraintStart_toStartOf="@+id/sin"
-            app:layout_constraintTop_toBottomOf="@+id/sin" />
-
-        <androidx.appcompat.widget.AppCompatButton
-            android:id="@+id/Log10"
-            style="@style/smallbutton"
-            android:layout_marginTop="8dp"
-            android:onClick="onClickNumber"
-            android:text="Log10"
-            android:textColor="@color/buttonIcon1"
-            app:layout_constraintStart_toStartOf="@+id/cos"
-            app:layout_constraintTop_toBottomOf="@+id/cos" />
-
-        <androidx.appcompat.widget.AppCompatButton
-            android:id="@+id/ln"
-            style="@style/smallbutton"
-
-            android:layout_marginTop="8dp"
-            android:onClick="onClickNumber"
-            android:text="ln"
-            android:textColor="@color/buttonIcon1"
-            app:layout_constraintStart_toStartOf="@+id/tan"
-            app:layout_constraintTop_toBottomOf="@+id/tan" />
-
-        <androidx.appcompat.widget.AppCompatButton
-            android:id="@+id/exp"
-            style="@style/button"
-            android:layout_marginStart="8dp"
-            android:onClick="onClickNumber"
-            android:text="exp"
-            android:textColor="@color/buttonIcon2"
-            app:layout_constraintStart_toEndOf="@+id/Div"
-            app:layout_constraintTop_toTopOf="@+id/Div" />
-
-        <androidx.appcompat.widget.AppCompatButton
-            android:id="@+id/X2"
-            style="@style/button"
-            android:layout_marginStart="8dp"
-            android:onClick="onClickNumber"
-            android:text="x2"
-            android:textColor="@color/buttonIcon2"
-            app:layout_constraintBottom_toBottomOf="@+id/Result"
-            app:layout_constraintStart_toEndOf="@+id/Result"
-            app:layout_constraintTop_toTopOf="@+id/Result" />
-
-
-        <androidx.appcompat.widget.AppCompatButton
-            android:id="@+id/Xn"
-            style="@style/button"
-            android:layout_marginStart="8dp"
-            android:onClick="onClickNumber"
-            android:text="xⁿ"
-            android:textColor="@color/buttonIcon2"
-            app:layout_constraintStart_toEndOf="@+id/Multiplication"
-            app:layout_constraintTop_toTopOf="@+id/Multiplication" />
-
-        <androidx.appcompat.widget.AppCompatButton
-            android:id="@+id/sinh"
-            style="@style/smallbutton"
-            android:layout_marginStart="8dp"
-            android:onClick="onClickNumber"
-            android:text="sinh"
-            android:textColor="@color/buttonIcon1"
-            app:layout_constraintStart_toEndOf="@+id/tan"
-            app:layout_constraintTop_toTopOf="@+id/tan" />
-
-        <androidx.appcompat.widget.AppCompatButton
-            android:id="@+id/cosh"
-            style="@style/smallbutton"
-            android:layout_marginStart="16dp"
-            android:onClick="onClickNumber"
-            android:text="cosh"
-            android:textColor="@color/buttonIcon1"
-            app:layout_constraintStart_toEndOf="@+id/sinh"
-            app:layout_constraintTop_toTopOf="@+id/sinh" />
-
-        <androidx.appcompat.widget.AppCompatButton
-            android:id="@+id/tanh"
-            style="@style/smallbutton"
-            android:layout_marginStart="8dp"
-            android:onClick="onClickNumber"
-            android:text="tanh"
-            android:textColor="@color/buttonIcon1"
-            app:layout_constraintStart_toEndOf="@+id/cosh"
-            app:layout_constraintTop_toTopOf="@+id/cosh" />
-
-        <androidx.appcompat.widget.AppCompatButton
-            android:id="@+id/squareRoot"
-            style="@style/button"
-            android:layout_marginStart="8dp"
-            android:onClick="onClickNumber"
-            android:text="√x"
-            android:textColor="@color/buttonIcon2"
-            app:layout_constraintStart_toEndOf="@+id/plus"
-            app:layout_constraintTop_toTopOf="@+id/plus" />
-
-        <androidx.appcompat.widget.AppCompatButton
-            android:id="@+id/cubeRoot"
-            style="@style/button"
-            android:layout_marginStart="8dp"
-            android:onClick="onClickNumber"
-            android:text=" 3√x"
-            android:textColor="@color/buttonIcon2"
-            app:layout_constraintStart_toEndOf="@+id/Minus"
-            app:layout_constraintTop_toTopOf="@+id/Minus" />
-
-        <androidx.appcompat.widget.AppCompatButton
-            android:id="@+id/factorial"
-            style="@style/smallbutton"
-            android:layout_marginTop="8dp"
-            android:onClick="onClickNumber"
-            android:text="n!"
-            android:textColor="@color/buttonIcon1"
-            app:layout_constraintStart_toStartOf="@+id/cosh"
-            app:layout_constraintTop_toBottomOf="@+id/cosh" />
-
-        <androidx.appcompat.widget.AppCompatButton
-            android:id="@+id/xx"
-            style="@style/smallbutton"
-            android:layout_marginStart="8dp"
-            android:layout_marginTop="8dp"
-            android:onClick="onClickNumber"
-            android:text="1/X"
-            android:textColor="@color/buttonIcon1"
-            app:layout_constraintEnd_toEndOf="@+id/tanh"
-            app:layout_constraintStart_toEndOf="@+id/factorial"
-            app:layout_constraintTop_toBottomOf="@+id/tanh" />
-
-
-        <androidx.appcompat.widget.AppCompatButton
-            android:id="@+id/mod"
-            style="@style/smallbutton"
-            android:layout_marginTop="8dp"
-            android:onClick="onClickNumber"
-            android:text="mod"
-            android:textColor="@color/buttonIcon1"
-            app:layout_constraintStart_toStartOf="@+id/sinh"
-            app:layout_constraintTop_toBottomOf="@+id/sinh" />
-
 
         <androidx.appcompat.widget.AppCompatButton
             android:id="@+id/clear"
             style="@style/button"
-            android:layout_marginTop="130dp"
+            android:layout_marginStart="32dp"
+            android:layout_marginTop="32dp"
             android:onClick="onClickNumber"
             android:text="C"
             android:textColor="@color/buttonIcon1"
@@ -226,7 +60,6 @@
             android:id="@+id/appCompatButton"
             style="@style/button"
             android:layout_marginStart="16dp"
-            android:onClick="Delete"
             android:text="dl"
             android:textColor="@color/buttonIcon1"
             app:layout_constraintStart_toEndOf="@+id/clear"
@@ -241,15 +74,17 @@
             app:layout_constraintStart_toEndOf="@+id/appCompatButton"
             app:layout_constraintTop_toTopOf="@+id/appCompatButton" />
 
+
         <androidx.appcompat.widget.AppCompatButton
             android:id="@+id/Div"
             style="@style/button"
             android:layout_marginStart="16dp"
-            android:text="/"
+            android:text="÷"
+            android:onClick="onClickNumber"
+
             android:textColor="@color/buttonIcon2"
             app:layout_constraintStart_toEndOf="@+id/percentage"
             app:layout_constraintTop_toTopOf="@+id/percentage" />
-
 
         <androidx.appcompat.widget.AppCompatButton
             android:id="@+id/appCompatButton5"
@@ -290,7 +125,9 @@
             android:id="@+id/Multiplication"
             style="@style/button"
             android:layout_marginTop="16dp"
-            android:text="x"
+            android:text="×"
+            android:onClick="onClickNumber"
+
             android:textColor="@color/buttonIcon2"
             app:layout_constraintEnd_toEndOf="@+id/Div"
             app:layout_constraintStart_toStartOf="@+id/Div"
@@ -385,7 +222,6 @@
             app:layout_constraintEnd_toEndOf="@+id/Minus"
             app:layout_constraintStart_toStartOf="@+id/Minus"
             app:layout_constraintTop_toBottomOf="@+id/Minus" />
-
 
         <androidx.appcompat.widget.AppCompatButton
             android:id="@+id/appCompatButton18"
