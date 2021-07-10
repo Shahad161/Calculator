@@ -9,6 +9,7 @@ import io.reactivex.rxjava3.core.Observable
 import org.mariuszgromada.math.mxparser.Expression
 import java.text.DecimalFormat
 import java.util.concurrent.TimeUnit
+import kotlin.concurrent.thread
 
 class MainActivity : AppCompatActivity() {
     lateinit var binding: ActivityMainBinding
@@ -18,23 +19,29 @@ class MainActivity : AppCompatActivity() {
         setContentView(binding.root)
         RX()
     }
-    private fun Result(operation : String) {
-        val result = Expression(operation).calculate()
-        if (result.isNaN()) {
-            binding.operation.text = "Error"
-        } else {
-            binding.operation.text = DecimalFormat("0.######").format(result).toString()
+
+    private fun Result(operation: String) {
+        thread {
+            val result = Expression(operation).calculate()
+            this.runOnUiThread{
+                if (result.isNaN()) {
+                    binding.operation.text = "Error"
+                } else {
+                    binding.operation.text = DecimalFormat("0.######").format(result).toString()
+                }
+            }
         }
     }
+
     fun RX(){
         val observable = Observable.create<String>{ emitter ->
             binding.numbers.doOnTextChanged { text, start, before, count ->
                 emitter.onNext(text.toString())
             }
-        }.debounce(1, TimeUnit.SECONDS)
+        }.debounce(1500, TimeUnit.MILLISECONDS)
         observable.subscribe(
             { t ->
-                Result(t.toString())
+                Result(t)
             },
             { e ->
                 Log.i("TAG", "ON error")

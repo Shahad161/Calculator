@@ -15,9 +15,14 @@
         android:fontFamily="@font/doppio_one"
         android:textColor="@color/white"
         android:textSize="24sp"
+        android:gravity="right"
+        android:padding="8dp"
+        android:background="@drawable/button"
+        android:hint="ENTER YOUR OPERATION"
+        android:textColorHint="@color/yellow"
         app:layout_constraintBottom_toTopOf="@+id/operation"
         app:layout_constraintEnd_toEndOf="@+id/operation"
-        app:layout_constraintStart_toStartOf="parent" />
+        />
 
     <TextView
         android:id="@+id/operation"
