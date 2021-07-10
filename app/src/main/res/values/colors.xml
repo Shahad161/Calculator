@@ -4,8 +4,16 @@
     <color name="card2">#3B414C</color>
     <color name="buttonIcon1">#438F8F</color>
     <color name="buttonIcon2">#BF585B</color>
-    <color name="backGround">#20242D</color>
+    <color name="backGround2">#1E201F</color>
+    <color name="backGround">#1F2128</color>
     <color name="button">#262B33</color>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
+    <color name="Offwhite">#EAEAEA</color>
+    <color name="black2">#1F2128</color>
+    <color name="yellow">#FFEA30</color>
+    <color name="yellow2">#FFEB3B</color>
+
+
+
 </resources>
