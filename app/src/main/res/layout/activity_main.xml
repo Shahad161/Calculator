@@ -12,31 +12,33 @@
         android:id="@+id/numbers"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:fontFamily="@font/doppio_one"
-        android:textColor="@color/white"
-        android:textSize="24sp"
-        android:gravity="right"
-        android:padding="8dp"
         android:background="@drawable/button"
-        android:hint="ENTER YOUR OPERATION"
+        android:fontFamily="@font/doppio_one"
+        android:gravity="right"
+        android:hint="YOUR OPERATION"
+        android:padding="16dp"
+        android:textColor="@color/white"
+        android:textColorHighlight="@color/card2"
         android:textColorHint="@color/yellow"
+        android:textSize="24sp"
         app:layout_constraintBottom_toTopOf="@+id/operation"
-        app:layout_constraintEnd_toEndOf="@+id/operation"
-        />
+        app:layout_constraintEnd_toEndOf="@+id/operation" />
 
     <TextView
         android:id="@+id/operation"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="16dp"
+        android:layout_marginBottom="8dp"
         android:fontFamily="@font/doppio_one"
         android:gravity="right"
         android:maxLength="10"
+
         android:text=""
         android:textColor="@color/yellow"
         android:textSize="64sp"
         app:layout_constraintBottom_toTopOf="@+id/theLine"
-        app:layout_constraintEnd_toEndOf="@+id/theLine" />
+        app:layout_constraintEnd_toEndOf="@+id/theLine"
+        app:layout_constraintStart_toStartOf="@+id/theLine" />
 
     <View
         android:id="@+id/theLine"
