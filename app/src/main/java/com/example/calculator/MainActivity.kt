@@ -18,10 +18,10 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
-        RX()
+        rxJava()
     }
 
-    private fun Result(operation: String) {
+    private fun result(operation: String) {
         val result = Expression(operation).calculate()
         if (result.isNaN()) {
             binding.operation.text = "Error"
@@ -30,7 +30,7 @@ class MainActivity : AppCompatActivity() {
         }
     }
 
-    fun RX(){
+    fun rxJava(){
         val observable = Observable.create<String>{ emitter ->
             binding.numbers.doOnTextChanged { text, start, before, count ->
                 emitter.onNext(text.toString())
@@ -38,7 +38,7 @@ class MainActivity : AppCompatActivity() {
         }.debounce(1500, TimeUnit.MILLISECONDS)
         observable.subscribeOn(Schedulers.io()).observeOn(AndroidSchedulers.mainThread()).subscribe(
             { t ->
-                Result(t)
+                result(t)
             },
             { e ->
                 Log.i("TAG", "ON error")
