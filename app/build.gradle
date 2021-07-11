@@ -48,6 +48,7 @@ dependencies {
     // Math
     implementation 'org.mariuszgromada.math:MathParser.org-mXparser:4.4.2'
     // RXjava
+    implementation 'io.reactivex.rxjava3:rxandroid:3.0.0'
     implementation "io.reactivex.rxjava3:rxjava:3.0.13"
 
 }
